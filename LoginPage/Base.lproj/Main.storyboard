@@ -36,12 +36,11 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fzv-SZ-OJh">
                                                 <rect key="frame" x="0.0" y="88" width="300" height="34.333333333333343"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="300" id="pQf-g5-cUL"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="pQf-g5-cUL"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Log in"/>
                                                 <connections>
-                                                    <action selector="loginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Btf-hf-OD6"/>
                                                     <segue destination="JTE-W9-fYQ" kind="presentation" modalPresentationStyle="fullScreen" id="SPB-l6-Oya"/>
                                                 </connections>
                                             </button>
@@ -100,33 +99,35 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5E-bQ-0kA">
                                 <rect key="frame" x="179.33333333333334" y="861.66666666666663" width="81.666666666666657" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log out"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log out">
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="Cac-o4-EJ4" kind="unwind" unwindAction="unwindFor:" id="euF-wS-Vzo"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="XXb-wS-Wz5">
-                                <rect key="frame" x="40" y="429" width="360" height="98.333333333333371"/>
+                                <rect key="frame" x="40" y="432.33333333333331" width="360" height="91.333333333333314"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zWa-w9-r96">
-                                        <rect key="frame" x="58.333333333333329" y="0.0" width="243.33333333333337" height="40.666666666666664"/>
+                                        <rect key="frame" x="79" y="0.0" width="202" height="33.666666666666664"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wellcome," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8o-e1-UzF">
-                                                <rect key="frame" x="0.0" y="0.0" width="151.66666666666666" height="40.666666666666664"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="125.33333333333333" height="33.666666666666664"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zhs-EM-kX3">
-                                                <rect key="frame" x="156.66666666666669" y="0.0" width="86.666666666666686" height="40.666666666666664"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                <rect key="frame" x="130.33333333333334" y="0.0" width="71.666666666666657" height="33.666666666666664"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👋" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lf7-il-wxi">
-                                        <rect key="frame" x="161" y="57.666666666666686" width="38" height="40.666666666666657"/>
+                                        <rect key="frame" x="161" y="50.666666666666686" width="38" height="40.666666666666657"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -135,7 +136,7 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gUm-Qm-yXJ"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor"/>
                         <constraints>
                             <constraint firstItem="XXb-wS-Wz5" firstAttribute="centerY" secondItem="QEY-34-Zb3" secondAttribute="centerY" id="Drb-oZ-ESX"/>
                             <constraint firstItem="gUm-Qm-yXJ" firstAttribute="trailing" secondItem="XXb-wS-Wz5" secondAttribute="trailing" constant="40" id="JeS-rS-Cvf"/>
@@ -159,8 +160,8 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

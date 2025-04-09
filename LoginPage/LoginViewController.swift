@@ -27,35 +27,36 @@ final class LoginViewController: UIViewController {
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard userNameTextField.text == user, passwordTextField.text == password else {
-            showAlert(withTittle: "Invalid login or password", andMessage: "Please, enter correct login and password")
-            passwordTextField.text = ""
-            
+            showAlert(withTitle: "Invalid login or password", andMessage: "Please, enter correct login and password") {
+                self.passwordTextField.text = ""
+            }
             return false
         }
         return true
     }
     
-    @IBAction func loginButtonAction(_ sender: UIButton) {
-    }
     
     @IBAction func userNameRefreshButtonAction(_ sender: UIButton) {
-        showAlert(withTittle: "Tips", andMessage: "Your User Name is \(user)")
+        showAlert(withTitle: "Tips", andMessage: "Your User Name is \(user)")
     }
     
     @IBAction func passwordRefreshButtonAction(_ sender: UIButton) {
-        showAlert(withTittle: "Tips", andMessage: "Your password is \(password)")
+        showAlert(withTitle: "Tips", andMessage: "Your password is \(password)")
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         userNameTextField.text = ""
         passwordTextField.text = ""
     }
-    
-    private func showAlert(withTittle tittle: String, andMessage message: String) {
-        let alert = UIAlertController(title: tittle, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default)
+
+    private func showAlert(withTitle title: String, andMessage message: String, completion: (() -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            completion?()
+        }
         alert.addAction(okAction)
         present(alert, animated: true)
     }
 }
+
 
